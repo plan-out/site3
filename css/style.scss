@@ -1,11 +1,11 @@
 @charset "utf-8";
 
 :root{
-	font-family:"Montserrat", "Nanum Gothic";
+	font-family:"Montserrat", "NanumBarunGothic";
 	font-size:12px;
 }
 
-body{background:#666; line-height:1.6;}
+body{line-height:1.6;}
 //1.6 : 영역별로 적용된 글자크기에 비례하여 1.6배를 적용함.
 //1.6em : 글자크기(12px)에 비례하여 1.6배인 19.2px이 적용함.
 
@@ -15,6 +15,7 @@ a{display:inline-block; text-decoration:none; color:inherit;}
 
 header{
 	position:fixed; width:100%; padding:20px 0; color:#fff;
+	z-index:100;
 	.inner{padding:0 100px;}
 	a:hover{color:#20bec6;}
 	#logo{
@@ -42,3 +43,46 @@ header{
 	}//end:.sub
 	&:hover .sub{display:block;}
 }//end:#gnb
+
+#sns{
+	float:right;
+	li{float:left; margin-top:8px;}
+	a{padding:15px 5px;}
+}//end:#sns
+
+#main_visual{
+	overflow:hidden; background:#000; position:relative;
+	.slider{
+		height:100vh; display:flex;
+		article{width:100%; flex-shrink:0; position:relative;
+			background:center center no-repeat; background-size:cover;}
+		article::before{content:""; position:absolute; background:#000;
+			top:0; left:0; width:100%; height:100%; opacity:.5;}	
+		.view1{background-image:url("../images/view01.jpg");}
+		.view2{background-image:url("../images/view02.jpg");}
+		.view3{background-image:url("../images/view03.jpg");}
+		.view4{background-image:url("../images/view04.jpg");}
+		.view5{background-image:url("../images/view05.jpg");}
+		.view6{background-image:url("../images/view06.jpg");}
+		.text{
+			color:#fff; position:absolute; bottom:120px; left:120px;
+			transform:translateY(50px); opacity:0;
+			transition:all .5s ease-in-out;
+			h3{font-size:50px; line-height:1.1; font-weight:300;}
+			p{font-size:18px; padding:20px 0;}
+			a{width:150px; height:50px; text-align:center; line-height:50px;
+				font-size:14px; border:1px solid #fff;}
+			a:hover{background:#fff; color:#000;}
+			i{display:inline-block; vertical-align:-1px; padding-left:6px;}
+		}//end:.text
+		.active .text{transform:translateY(0); opacity:1;
+			transition-delay:.6s;}
+	}//end:.slider
+	.pager{
+		position:absolute; z-index:10; bottom:16px; left:50%;
+		transform:translateX(-50%);
+		span{display:inline-block; width:6px; height:6px; margin:0 5px;
+			border-radius:50%; border:1px solid #fff; cursor:pointer;}
+		span.active{background:#fff;}	
+	}//end:.pager
+}//end:#main_visual
