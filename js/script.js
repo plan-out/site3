@@ -20,3 +20,16 @@ var main_visual = new Swiper("#main_visual",{
 		bulletActiveClass:"active" //활성화된 버튼에 추가되는 클래스
 	},
 });
+
+/*press 스와이퍼 호출*/
+var press = new	Swiper("#press .inner",{
+	wrapperClass:"slider",	
+	slideClass:"item",
+	slidesPerView:5,
+	spaceBetween:30,
+	pagination: {	
+    el: '.dot',
+		clickable:true,	
+		bulletActiveClass:"active" 
+	},
+});

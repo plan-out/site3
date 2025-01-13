@@ -322,4 +322,152 @@ header.scrolled #gnb a::after {
 #about a:hover {
   background: #fff;
   color: #222;
+}
+
+#press {
+  background: #eee;
+  padding: 50px 0;
+  overflow: hidden;
+}
+#press h2 {
+  margin: 0 0 50px 120px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#press h2 a:hover {
+  text-decoration: underline;
+}
+#press .inner {
+  padding: 20px 50px;
+}
+#press .slider {
+  display: flex;
+}
+#press .slider .item {
+  flex-shrink: 0;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+#press .slider .item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px #aaa;
+}
+#press .slider .item.last {
+  background: none;
+  transform: none;
+  box-shadow: none;
+}
+#press .slider img {
+  width: 100%;
+}
+#press .slider h3 {
+  padding: 10px 15px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+}
+#press .slider h3:hover {
+  color: #20bec6;
+}
+#press .slider h3 + p {
+  padding: 0 15px 10px;
+  font-size: 10px;
+}
+#press .slider .more {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #222;
+  border: 1px solid #222;
+}
+#press .slider .more:hover {
+  background: #222;
+  color: #fff;
+}
+#press .dot {
+  margin-top: 40px;
+  text-align: center;
+}
+#press .dot span {
+  display: inline-block;
+  margin: 0 5px;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.3;
+}
+#press .dot span.active {
+  opacity: 1;
+}
+
+#partners {
+  padding: 100px 0;
+}
+#partners h2 {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: bold;
+  text-align: center;
+}
+#partners ul {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#partners li {
+  flex: 0 0 20%;
+}
+#partners img {
+  width: 100%;
+  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
+}
+#partners img:hover {
+  opacity: 1;
+}
+
+footer {
+  background: #000;
+  color: #999;
+}
+footer .inner {
+  height: 150px;
+  padding: 50px 120px;
+  line-height: 1.4;
+  display: flex;
+}
+footer .logo {
+  width: 30%;
+}
+footer .logo img {
+  width: 100px;
+}
+footer .info {
+  width: 35%;
+  padding-left: 20px;
+}
+footer .info dt {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+footer .info dd {
+  margin-bottom: 5px;
+}
+footer .copyright {
+  padding: 20px 120px;
+  border-top: 1px solid #222;
+}
+footer .copyright p {
+  margin: 10px 0;
+  font-size: 10px;
 }/*# sourceMappingURL=style.css.map */
