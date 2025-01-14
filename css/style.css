@@ -66,6 +66,38 @@ header.scrolled #gnb a::after {
   background: #000;
 }
 
+.open_search {
+  position: relative;
+  cursor: pointer;
+}
+.open_search span {
+  position: absolute;
+  background: #000;
+  color: #fff;
+  top: 50px;
+  left: -11px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  border-radius: 3px;
+  opacity: 0;
+  transition: all 0.4s;
+  visibility: hidden;
+}
+.open_search span::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: #000 transparent;
+}
+.open_search:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
 #gnb li {
   float: left;
   margin-top: 8px;
@@ -119,6 +151,70 @@ header.scrolled #gnb a::after {
 }
 #sns a {
   padding: 15px 5px;
+}
+
+#search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: #000;
+  color: #5abcc4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1, 1.1);
+  transition: all 0.3s;
+}
+#search.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1, 1);
+}
+#search .inner {
+  width: 50%;
+}
+#search input {
+  width: 100%;
+  font-size: 7vw;
+  padding: 0 0.1em;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #5abcc4;
+  outline: none;
+  color: #5abcc4;
+  box-sizing: border-box;
+}
+#search input::-moz-placeholder {
+  color: #222;
+}
+#search input::placeholder {
+  color: #222;
+}
+#search p {
+  font-size: 90%;
+  font-weight: bold;
+  padding: 0.85em 0;
+  text-align: right;
+}
+#search .close_search {
+  position: absolute;
+  top: 1.25em;
+  right: 1.25em;
+  font-size: 2.5em;
+  padding: 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+#search .close_search i {
+  transition: all 0.3s;
+}
+#search .close_search:hover i {
+  transform: rotate(90deg);
 }
 
 #main_visual {
@@ -470,4 +566,25 @@ footer .copyright {
 footer .copyright p {
   margin: 10px 0;
   font-size: 10px;
+}
+
+/*태블릿환경 : 화면의 너비가 1024px 이하인 경우*/
+@media all and (max-width: 1024px) {
+  header .inner {
+    padding: 0 50px;
+  }
+  #main_visual .slider .text {
+    left: 60px;
+  }
+  #works .list li {
+    flex-basis: 50%;
+    height: 28vw;
+  }
+  #works .list img {
+    opacity: 0.7;
+  }
+  #works .list h3 {
+    font-size: 28px;
+    font-weight: 300;
+  }
 }/*# sourceMappingURL=style.css.map */

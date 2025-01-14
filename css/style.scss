@@ -36,6 +36,17 @@ header{
 	}//end:&.scrolled
 }//end:#header
 
+.open_search{
+	position:relative; cursor: pointer;
+	span{position:absolute; background:#000; color:#fff;
+		top:50px; left:-11px; padding:2px 8px; white-space:nowrap;
+		border-radius:3px; opacity:0; transition:all .4s;
+		visibility:hidden;}
+	span::before{content:''; position:absolute; top:-5px; left:50%;
+		margin-left:-5px; border-width:0 5px 5px 5px; border-style:solid;
+		border-color:#000 transparent;}
+	&:hover span{opacity:1; visibility:visible;}
+}//end:.open_search
 
 #gnb{
 	li{float:left; margin-top:8px;}
@@ -59,6 +70,27 @@ header{
 	li{float:left; margin-top:8px;}
 	a{padding:15px 5px;}
 }//end:#sns
+
+#search{
+	position:fixed; top:0; left:0; right:0; bottom:0; z-index:999;
+	background:#000; color:#5abcc4; 
+	display:flex; justify-content:center; align-items:center;
+	opacity:0; visibility:hidden; transform:scale(1.1,1.1);
+	transition:all .3s;
+	&.show{opacity:1; visibility:visible; transform:scale(1,1);}
+	.inner{width:50%;}
+	input{width:100%; font-size:7vw; padding:0 .1em; background:none;
+		border:0; border-bottom:2px solid #5abcc4; outline:none;
+		color:#5abcc4; box-sizing:border-box;}
+	input::placeholder{color:#222;}
+	p{font-size:90%; font-weight:bold; padding:0.85em 0; text-align:right;}
+	.close_search{
+		position:absolute; top:1.25em; right:1.25em; font-size:2.5em;
+		padding:10px; cursor:pointer; line-height:1;
+		i{transition:all .3s}
+		&:hover i{transform:rotate(90deg);}
+	}//end:.close_search
+}//end:#search
 
 #main_visual{
 	overflow:hidden; background:#000; position:relative;
@@ -190,3 +222,14 @@ footer{
 		p{margin:10px 0; font-size:10px}
 	}
 }//end:footer
+
+/*태블릿환경 : 화면의 너비가 1024px 이하인 경우*/
+@media all and (max-width:1024px){
+	header .inner{padding:0 50px;}	
+	#main_visual .slider .text{left:60px;}
+	#works .list{
+		li{flex-basis:50%; height:28vw;}
+		img{opacity:.7;}
+		h3{font-size:28px; font-weight:300;}
+	}
+}//end:@media (태블릿)
