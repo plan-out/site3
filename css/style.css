@@ -66,6 +66,17 @@ header.scrolled #gnb a::after {
   background: #000;
 }
 
+#btns {
+  float: right;
+}
+#btns li {
+  float: left;
+  margin-top: 8px;
+}
+#btns a {
+  padding: 15px 5px;
+}
+
 .open_search {
   position: relative;
   cursor: pointer;
@@ -96,6 +107,37 @@ header.scrolled #gnb a::after {
 .open_search:hover span {
   opacity: 1;
   visibility: visible;
+}
+
+.open_menu {
+  display: none;
+  position: relative;
+  z-index: 101;
+  cursor: pointer;
+}
+.open_menu i {
+  float: left;
+}
+.open_menu .xi-close {
+  display: none;
+}
+.open_menu span {
+  float: left;
+  font-size: 10px;
+  line-height: 1.1;
+  margin-left: 5px;
+  padding-top: 2px;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+.open_menu.active {
+  color: #fff;
+}
+.open_menu.active .xi-bars {
+  display: none;
+}
+.open_menu.active .xi-close {
+  display: inline;
 }
 
 #gnb li {
@@ -349,6 +391,9 @@ header.scrolled #gnb a::after {
   position: relative;
   color: #fff;
 }
+#works .list p {
+  height: 100%;
+}
 #works .list img {
   width: 100%;
   height: 100%;
@@ -586,5 +631,166 @@ footer .copyright p {
   #works .list h3 {
     font-size: 28px;
     font-weight: 300;
+  }
+}
+/*모바일환경 : 화면의 너비가 768px 이하인 경우*/
+@media all and (max-width: 768px) {
+  header {
+    padding: 0;
+  }
+  header .inner {
+    padding: 0 25px;
+  }
+  header #logo {
+    margin-left: 0;
+  }
+  header .open_menu {
+    display: inline-block;
+  }
+  header .menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #000;
+    padding: 0 50px;
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  header .menu.active {
+    transform: translateY(0);
+    visibility: visible;
+  }
+  header .menu.active #gnb > ul > li {
+    transform: translateY(0);
+    visibility: visible;
+  }
+  header .menu.active #gnb > ul > li:nth-child(1) {
+    transition-delay: 0.45s;
+  }
+  header .menu.active #gnb > ul > li:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  header .menu.active #gnb > ul > li:nth-child(3) {
+    transition-delay: 0.35s;
+  }
+  header .menu.active #gnb > ul > li:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  header .menu.active #gnb > ul > li:nth-child(5) {
+    transition-delay: 0.25s;
+  }
+  header .menu.active #gnb > ul > li:nth-child(6) {
+    transition-delay: 0.2s;
+  }
+  header .menu #gnb {
+    padding-top: 50px;
+  }
+  header .menu #gnb > ul > li {
+    float: none;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    transform: translateY(-100px);
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+  }
+  header .menu #gnb > ul > li > a {
+    font-size: 22px;
+    width: auto;
+    padding: 5px 0 10px;
+    line-height: 0.8;
+    color: #fff;
+  }
+  header .menu #gnb > ul > li > a::after {
+    display: none;
+  }
+  header .menu #gnb .sub {
+    display: block;
+    padding: 0 0 0 10px;
+    color: #555;
+  }
+  header .menu #gnb .sub li {
+    list-style: disc;
+  }
+  header .menu #gnb .sub a {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+  header .menu #sns {
+    float: none;
+    font-size: 14px;
+    color: #fff;
+  }
+  header .menu #sns li {
+    width: 33%;
+  }
+  #search .inner {
+    width: 70%;
+  }
+  #search span {
+    display: none;
+  }
+  #main_visual .slider .text {
+    left: 0;
+    padding-left: 40px;
+    bottom: 80px;
+  }
+  #main_visual .slider .text h3 {
+    font-size: 40px;
+  }
+  #works h2 {
+    margin-left: 30px;
+  }
+  #works .list {
+    display: block;
+    margin: 0 20px;
+  }
+  #works .list li {
+    margin-bottom: 20px;
+    border: 0;
+    box-shadow: 0 0 15px #ccc;
+    height: 56vw;
+  }
+  #works .list img {
+    border-radius: 5px;
+    opacity: 1;
+    transform: none !important;
+  }
+  #works .list h3 {
+    bottom: 36px !important;
+  }
+  #about p {
+    width: 92%;
+    padding: 20px 4%;
+    font-size: 16px;
+    margin: 0;
+  }
+  #press h3 {
+    margin-left: 30px;
+  }
+  #press .inner {
+    padding: 20px;
+  }
+  #partners ul {
+    padding: 50px 20px;
+  }
+  #partners li {
+    flex-basis: 50%;
+  }
+  #partners img {
+    opacity: 1;
+  }
+  footer .inner {
+    padding: 50px 20px;
+    height: auto;
+  }
+  footer .copyright {
+    padding: 20px;
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */

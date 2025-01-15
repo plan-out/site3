@@ -1,7 +1,5 @@
 /*header 스크롤클래스 호출*/
-var header = new EzenScrollClass("header",{
-	baseline:100
-});
+var header = new EzenScrollClass("header",{baseline:100});
 
 
 /*main_visual 스와이퍼 호출*/
@@ -45,7 +43,7 @@ var press = new	Swiper("#press .inner",{
 });
 
 
-//상품검색영역 스크립트
+//검색영역 스크립트
 var search = document.getElementById("search");
 
 function open_search(){
@@ -54,4 +52,12 @@ function open_search(){
 
 function close_search(){
 	search.classList.remove("show");
+}
+
+//메뉴영역 스크립트
+var menu = document.querySelector(".menu");
+
+function open_menu(btn){
+	menu.classList.toggle("active");
+	btn.classList.toggle("active");
 }
