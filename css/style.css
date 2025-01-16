@@ -793,4 +793,81 @@ footer .copyright p {
     padding: 20px;
     text-align: center;
   }
+}
+/*모바일환경 : 화면의 너비가 420px이하인 경우*/
+@media all and (max-width: 420px) {
+  #main_visual {
+    border-bottom: 1px solid #eee;
+  }
+  #main_visual .slider .text {
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    bottom: 0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+  }
+  #main_visual .slider .text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background: #fff;
+    z-index: -1;
+    transform: skewY(10deg);
+  }
+  #main_visual .slider .text h3 {
+    order: 2;
+    font-size: 30px;
+    line-height: 1.3;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+  }
+  #main_visual .slider .text p {
+    order: 3;
+    font-size: 14px;
+    margin: 0;
+    padding: 0 0 15px;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+  }
+  #main_visual .slider .text a {
+    order: 1;
+    font-size: 12px;
+    text-align: left;
+    height: auto;
+    border: 0;
+  }
+  #main_visual .slider .active .text h3 {
+    transform: translateY(0);
+    transition-delay: 0.8s;
+  }
+  #main_visual .slider .active .text p {
+    transform: translateY(0);
+    transition-delay: 1s;
+  }
+  #main_visual .pager {
+    left: auto;
+    right: 15px;
+    transform: none;
+  }
+  #main_visual .pager span {
+    border-color: #000;
+  }
+  #main_visual .pager span.active {
+    background: #000;
+  }
+  footer .inner {
+    flex-wrap: wrap;
+  }
+  footer .logo {
+    width: calc(100% - 20px);
+    padding: 0 0 20px 20px;
+  }
+  footer .info {
+    width: calc(50% - 20px);
+  }
 }/*# sourceMappingURL=style.css.map */
